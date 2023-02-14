@@ -38,10 +38,16 @@ function createTable(){
     for (const entry in list) {
         let tr = document.createElement("tr");
         tbody.appendChild(tr);
-        for (const [k,v] of Object.entries(list[entry])) {
+        // for (const [k,v] of Object.entries(list[entry])) {
+        //     let td = document.createElement("td");
+        //     tr.appendChild(td);
+        //     td.innerHTML= v;
+        //     td.style.border="2px solid blue"
+        // }
+        for (const data in list) {
             let td = document.createElement("td");
             tr.appendChild(td);
-            td.innerHTML= v;
+            td.innerHTML= list[data];
             td.style.border="2px solid blue"
         }
     }
