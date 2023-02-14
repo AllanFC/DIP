@@ -8,14 +8,6 @@ const MOUNTAINS = [
     {name: "Mont Blanc", height: 4808, place: "Italy/France"}
 ];
 
-const object = {'a': 1, 'b': 2, 'c' : 3};
-
-for (const [key, value] of Object.entries(object)) {
-  console.log(key, value);
-}
-
-
-
 function createTable(){
     let list = MOUNTAINS;
     let table = document.createElement("table");
@@ -38,16 +30,10 @@ function createTable(){
     for (const entry in list) {
         let tr = document.createElement("tr");
         tbody.appendChild(tr);
-        // for (const [k,v] of Object.entries(list[entry])) {
-        //     let td = document.createElement("td");
-        //     tr.appendChild(td);
-        //     td.innerHTML= v;
-        //     td.style.border="2px solid blue"
-        // }
-        for (const data in list) {
+        for (const [k,v] of Object.entries(list[entry])) {
             let td = document.createElement("td");
             tr.appendChild(td);
-            td.innerHTML= list[data];
+            td.innerHTML= v;
             td.style.border="2px solid blue"
         }
     }
@@ -55,3 +41,4 @@ function createTable(){
     table.style.borderCollapse="collapse"
     document.querySelector('h1').after(table)
 }
+createTable();
