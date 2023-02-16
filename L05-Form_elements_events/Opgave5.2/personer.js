@@ -61,7 +61,3 @@ function updateTable() {
 
 //interactions
 addBtn.onclick = () => addPerson();
-
-
-
-
