@@ -1,8 +1,11 @@
 //Declarations
 let divPersonTable = document.querySelector("#addedPersons");
+let nameInput = document.querySelector("#name");
+let ageInput = document.querySelector("#age");
+let addBtn = document.querySelector("#addBtn");
 
 //Functions
-export function createTable(list){
+function createTable(list){
     let table = document.createElement("table");
     table.id = "personTable";
     let thead = document.createElement("thead");
@@ -27,7 +30,7 @@ export function createTable(list){
     divPersonTable.innerHTML = table.outerHTML;
 }
 
-export function updateTable(persons) {
+function updateTable(persons) {
     let tbody = document.querySelector("#tbPerson");
     tbody.insertRow();
     let tr = document.createElement("tr");
@@ -43,7 +46,18 @@ export function updateTable(persons) {
     }
 }
 
-console.log("No logik");
+interactions
+addBtn.onclick = () => {
+    if(nameInput.value !== "" && ageInput.value !== ""){
+        addPerson(nameInput.value, ageInput.value);
+        nameInput.value = "";
+        ageInput.value = "";
+        if(persons.length === 1){
+            createTable(persons);
+        }
+        updateTable(persons);
+    }
+};
 
 
 

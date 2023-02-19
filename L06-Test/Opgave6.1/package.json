@@ -2,9 +2,10 @@
   "name": "opgave6.1",
   "version": "1.0.0",
   "description": "",
-  "main": "personer.js",
+  "type": "module",
+  "main": "personerLogik.js",
   "scripts": {
-    "test": "mocha '*.test.js'"
+    "test": "mocha"
   },
   "keywords": [],
   "author": "",

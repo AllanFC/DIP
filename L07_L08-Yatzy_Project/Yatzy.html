@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="Yatzy.css">
+        <script type="module" src="Yatzy.js" defer></script>
+        <script type="module" src="YatzyGui.js" defer></script>
+    </head>
+    <body>
+        <div id="background">
+            <h1>Yatzy</h1>
+            <div id="topContainer">
+                <div id="diceContainer">            
+                    <div class="dice">
+                        <img class="diceImg" id="dice1" src="dice1.png">
+                    </div>
+                    <div class="dice">
+                        <img class="diceImg" id="dice2" src="dice2.png">
+                    </div>
+                    <div class="dice">
+                        <img class="diceImg" id="dice3" src="dice3.png">
+                    </div>
+                    <div class="dice">
+                        <img class="diceImg" id="dice4" src="dice4.png">
+                    </div>
+                    <div class="dice">
+                        <img class="diceImg" id="dice5" src="dice5.png">
+                    </div>
+
+                </div>
+                <span>
+                    <span>
+                        <label id="rollLbl">Roll 0</label>
+                    </span>
+                    <span style="float: right;">
+                        <button id="rollButton">Roll!</button>
+                    </span>
+                </span>
+                
+            </div>
+
+            <div id="bottomContainer">
+                <div id="scoreContainer">
+                    <label id="lbl1" >1-s</label>
+                    <label id="lbl2">2-s</label>
+                    <label id="lbl3">3-s</label>
+                    <label id="lbl4">4-s</label>
+                    <label id="lbl5">5-s</label>
+                    <label id="lbl6">6-s</label>
+                    <label id="lbl7">One pair</label>
+                    <label id="lbl8">Two pair</label>
+                    <label id="lbl9">Three same</label>
+                    <label id="lbl10">Four same</label>
+                    <label id="lbl11">Full house</label>
+                    <label id="lbl12">Small straight</label>
+                    <label id="lbl13">Large straight</label>
+                    <label id="lbl14">Chance</label>
+                    <label id="lbl15">Yatzy</label>
+
+                    <input readonly id="Ones">
+                    <input readonly id="Twos">
+                    <input readonly id="Threes">
+                    <input readonly id="Fours">
+                    <input readonly id="Fives">
+                    <input readonly id="Sixs">
+                    <input readonly id="OnePair">
+                    <input readonly id="TwoPair">
+                    <input readonly id="ThreeSame">
+                    <input readonly id="FourSame">
+                    <input readonly id="FullHouse">
+                    <input readonly id="SmallStraight">
+                    <input readonly id="LargeStraight">
+                    <input readonly id="Chance">
+                    <input readonly id="Yatzy">
+
+                    <span id="spansum"><label>Sum: </label><input readonly id="inpSum"></span>
+                    <span id="spanbonus"><label>Bonus: </label><input readonly id="inpBonus"></span>
+                    <span id="spantotal"><label>Total: </label><input readonly id="inpTotal"></span>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>
