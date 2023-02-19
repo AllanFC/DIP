@@ -77,6 +77,14 @@ for(let e in allLbls){
             turnCounter == 15 ? newGame() : reset();
         }
     }
+    allInputs[e].onclick = () => {
+        if(die.getThrowCount() > 0){
+            allInputs[e].name = "Locked";
+            allInputs[e].disabled = true;
+            turnCounter++;
+            turnCounter == 15 ? newGame() : reset();
+        }
+    }
 }
 
 rollBtn.onclick = () => {roll()}
@@ -133,9 +141,9 @@ function roll(){
         allDice[i].src=diceFaces[values[i]-1].src;
     }
     rollLbl.textContent = "Roll " + (die.getThrowCount());
-    // if(die.getThrowCount() >= 3){
-    //     rollBtn.disabled = true;
-    // }
+    if(die.getThrowCount() >= 3){
+        rollBtn.disabled = true;
+    }
     fillResults();
 }
 
