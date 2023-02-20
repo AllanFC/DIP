@@ -170,9 +170,9 @@ function updateSums(){
 
     let bonus = 0;
     if(sameSum >= 63){
-        inputBonus.value = 50
         bonus = 50;
     }
+    inputBonus.value = bonus;
 
     let totalSum = sameSum;
     for(let i = 6; i < allInputs.length; i++){
