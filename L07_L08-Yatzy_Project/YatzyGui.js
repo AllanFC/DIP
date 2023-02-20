@@ -55,8 +55,8 @@ import YatzyDie from "./Yatzy.js";
 let die = new YatzyDie();
 
 //Declarations
-let diceFaces = [{value: 1, src: "./dice1.png"}, {value: 2, src: "./dice2.png"}, {value: 3, src: "./dice3.png"},
-                 {value: 4, src: "./dice4.png"}, {value: 5, src: "./dice5.png"}, {value: 6, src: "./dice6.png"}];
+let diceFaces = [{value: 1, src: "./Images/dice1.png"}, {value: 2, src: "./Images/dice2.png"}, {value: 3, src: "./Images/dice3.png"},
+                 {value: 4, src: "./Images/dice4.png"}, {value: 5, src: "./Images/dice5.png"}, {value: 6, src: "./Images/dice6.png"}];
 
 let holds = [false, false, false, false, false];
 
@@ -88,6 +88,9 @@ for(let e in allLbls){
 }
 
 rollBtn.onclick = () => {roll()}
+
+let widthtest = document.querySelector("#background").getBoundingClientRect().width;
+console.log(widthtest);
 
 //Functions
 function holdDie(imgNumber){
