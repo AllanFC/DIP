@@ -1,54 +1,29 @@
 //Document queries
-let dice1 = document.querySelector("#dice1");
-let dice2 = document.querySelector("#dice2");
-let dice3 = document.querySelector("#dice3");
-let dice4 = document.querySelector("#dice4");
-let dice5 = document.querySelector("#dice5");
-let allDice = [dice1, dice2, dice3, dice4, dice5];
+let allDice = [];
+for (let i = 1; i <= 5; i++) {
+    allDice.push(document.querySelector("#dice" + i))
+}
 
 let rollBtn = document.querySelector("#rollButton");
 let rollLbl = document.querySelector("#rollLbl");
 
-let lbl1 = document.querySelector("#lbl1");
-let lbl2 = document.querySelector("#lbl2");
-let lbl3 = document.querySelector("#lbl3");
-let lbl4 = document.querySelector("#lbl4");
-let lbl5 = document.querySelector("#lbl5");
-let lbl6 = document.querySelector("#lbl6");
-let lbl7 = document.querySelector("#lbl7");
-let lbl8 = document.querySelector("#lbl8");
-let lbl9 = document.querySelector("#lbl9");
-let lbl10 = document.querySelector("#lbl10");
-let lbl11 = document.querySelector("#lbl11");
-let lbl12 = document.querySelector("#lbl12");
-let lbl13 = document.querySelector("#lbl13");
-let lbl14 = document.querySelector("#lbl14");
-let lbl15 = document.querySelector("#lbl15");
-let allLbls = [lbl1, lbl2, lbl3, lbl4, lbl5, lbl6, lbl7, lbl8,
-            lbl9, lbl10, lbl11, lbl12, lbl13, lbl14, lbl15];
+let allLbls = [];
 
+for (let i = 1; i <= 15; i++) {
+    allLbls.push(document.querySelector("#lbl" + i))
+    
+}
 
-let input1s = document.querySelector("#Ones");
-let input2s = document.querySelector("#Twos");
-let input3s = document.querySelector("#Threes");
-let input4s = document.querySelector("#Fours");
-let input5s = document.querySelector("#Fives");
-let input6s = document.querySelector("#Sixs");
-let inputOnePair = document.querySelector("#OnePair");
-let inputTwoPair = document.querySelector("#TwoPair");
-let inputThreeSame = document.querySelector("#ThreeSame");
-let inputFourSame = document.querySelector("#FourSame");
-let inputFullHouse = document.querySelector("#FullHouse");
-let inputSmallStraight = document.querySelector("#SmallStraight");
-let inputLargeStraight = document.querySelector("#LargeStraight");
-let inputChance = document.querySelector("#Chance");
-let inputYatzy = document.querySelector("#Yatzy");
+let names = ["Ones", "Twos", "Threes", "Fours", "Fives", "Sixs", "OnePair", "TwoPair", "ThreeSame",
+            "FourSame", "FullHouse", "SmallStraight", "LargeStraight", "Chance", "Yatzy"]
 let inputSum = document.querySelector("#inpSum");
 let inputBonus = document.querySelector("#inpBonus");
 let inputTotal = document.querySelector("#inpTotal");
-let allInputs = [input1s, input2s, input3s, input4s, input5s, input6s, inputOnePair,
-                inputTwoPair, inputThreeSame, inputFourSame, inputFullHouse,
-                inputSmallStraight, inputLargeStraight, inputChance, inputYatzy];
+let allInputs = [];
+
+for (let i = 0; i < 15; i++) {
+    allInputs.push(document.querySelector("#" + names[i]))
+}
 
 //Imports
 import YatzyDie from "./Yatzy.js";
@@ -88,9 +63,6 @@ for(let e in allLbls){
 }
 
 rollBtn.onclick = () => {roll()}
-
-let widthtest = document.querySelector("#background").getBoundingClientRect().width;
-console.log(widthtest);
 
 //Functions
 function holdDie(imgNumber){

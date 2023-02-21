@@ -1,6 +1,6 @@
 class YatzyDice {
     constructor() {
-        this.values = [];
+        this.values = new Array(5).fill(0);
         this.throwCount = 0;
     }
     // Face values of the 5 dice.
@@ -75,7 +75,7 @@ class YatzyDice {
     // Index 0 is not used.
     // Note: This method can be used in several of the following methods.
     frequency() {
-        let freq = [0, 0, 0, 0, 0, 0, 0];
+        let freq = new Array(7).fill(0);
         for(let e of this.values){
             freq[e]++;
         }
