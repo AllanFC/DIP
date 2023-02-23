@@ -44,10 +44,6 @@ h1 {
     grid-auto-flow: column;
 }
 
-#rollButtonDiv {
-    align-items: right;
-}
-
 #rollButton {
     float: right;
     width: 100px;
