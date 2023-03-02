@@ -45,7 +45,8 @@ for(let e in allDice){
 
 for(let e in allLbls){
     allLbls[e].onclick = () => {
-        if(die.getThrowCount() > 0){
+        if(die.getThrowCount() > 0 && allInputs[e].name != "Locked"){
+
             allInputs[e].name = "Locked";
             allInputs[e].disabled = true;
             turnCounter++;
@@ -78,7 +79,9 @@ function holdDie(imgNumber){
 }
 
 function reset(){
-    holds = [false, false, false, false, false];
+    for (const i in holds) {
+        holds[i] = false;
+    }
     for(let e in allLbls){
         if(allInputs[e].name != "Locked"){
             allInputs[e].value = "";
