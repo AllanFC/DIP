@@ -3,7 +3,13 @@
 // }
 
 function compareSortAny(compareFunc, sortFunc){
-    return list => sortFunc(list, compareFunc);
+    return list => {
+      if (list !== undefined && list.length > 1) {
+        sortFunc(list, compareFunc);
+      } else {
+        throw Error(`Invalid parameter`);
+      }
+    }
 }
 
 const compareLen = (s1, s2) => {
@@ -43,7 +49,6 @@ let lengthBubble = compareSortAny(compareLen, bubbleSort);
 lengthBubble(arr);
 console.log(arr);
 
-console.log(arr);
 let lexioNoCaseBubble = compareSortAny(compareIgnoreCase, bubbleSort);
 lexioNoCaseBubble(arr);
 console.log(arr);
