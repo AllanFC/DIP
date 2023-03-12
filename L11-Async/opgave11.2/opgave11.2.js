@@ -16,6 +16,7 @@ async function createUsersTable(){
     let data = await respons.json();
 
     let table = document.createElement('table');
+    table.id = 'usersTable';
     
     for(let row of data){
         let tr = document.createElement('tr');
@@ -26,9 +27,9 @@ async function createUsersTable(){
         tr.cells[1].appendChild(document.createTextNode(row.name));
 
         table.appendChild(tr);
-        tr.onclick( () => {
+        tr.onclick = () => {
             getPostFromUser(tr.cells[0].innerHTML);
-        })
+        }
     }
     document.querySelector("body").appendChild(table);
 }
@@ -39,7 +40,12 @@ async function getPostFromUser(id){
         throw new Error(respons.status);
     let data = await respons.json();
 
+    if(document.querySelector("#postTable") !== null){
+        document.querySelector("#postTable").remove();
+    }
+
     let table = document.createElement('table');
+    table.id = "postTable";
     
     for(let row of data){
         let tr = document.createElement('tr');
@@ -53,7 +59,8 @@ async function getPostFromUser(id){
 
         table.appendChild(tr);
     }
-    document.querySelector("body").appendChild(table);
+    while(document.querySelector("#usersTable") === null){}
+    document.querySelector("#usersTable").after(table);
 }
 
 createUsersTable();
