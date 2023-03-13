@@ -7,19 +7,13 @@ let days = 0;
 let hours = 0;
 let minutes = 0;
 let seconds = 0;
-let milliseconds = 0;
 let interval;
 
-timer.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s " + milliseconds + "ms ";
+timer.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
 
 startbtn.onclick = () => {
     interval = setInterval(() => {
-        milliseconds++;
-        if(milliseconds > 99){
-            milliseconds = 0;
-            seconds++;
-        }
-
+        seconds++;
         if(seconds > 59){
             seconds = 0;
             minutes++;
@@ -35,7 +29,7 @@ startbtn.onclick = () => {
             days++;
         }
 
-        timer.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s " + milliseconds + "ms ";
+        timer.innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
     }, 10);
 }
 
