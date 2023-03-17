@@ -27,9 +27,9 @@ async function createUsersTable(){
         tr.cells[1].appendChild(document.createTextNode(row.name));
 
         table.appendChild(tr);
-        tr.onclick( () => {
+        tr.onclick = () => {
             getPostFromUser(tr.cells[0].innerHTML);
-        })
+        }
     }
     document.querySelector("body").appendChild(table);
 }
