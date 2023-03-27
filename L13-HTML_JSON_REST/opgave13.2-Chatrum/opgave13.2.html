@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat</title>
+    <link rel="stylesheet" href="opgave13.2.css">
+    <script src="opgave13.2.js" defer></script>
+    
+</head>
+<body>
+    <div id = 'rooms'>
+
+    </div>
+    <div id="messages">
+  
+    </div>
+    <br>
+    <label>Tekst:</label> <input type="text" id = 'textMessage'>
+    <label>Chatrum:</label>
+    <select name= "roomid" id="roomid">
+        <option value="Startrum">Startrum</option>
+        <option value="Rum1">Rum1</option>
+        <option value="Rum2">Rum2</option>
+        <option value="Rum3">Rum3</option>
+    </select>
+    <button onclick="createMessage()">Send besked</button>
+</body>
+</html>
