@@ -1,6 +1,6 @@
 // userServer.js
-const http = require('http');
-const fetch = require('node-fetch');
+import { createServer } from 'http';
+import fetch from 'node-fetch';
 
 //Ved install af node-fetch:
 //npm install node-fetch@^2.6.6
@@ -17,7 +17,7 @@ async function get(url) {
 
 function genererTabel(users) {
     let html = '<table>';
-    for (user of users) {
+    for (let user of users) {
         html +=
             '<tr><td>' + user.id +
             '</td><td>' + user.name +
@@ -28,7 +28,7 @@ function genererTabel(users) {
     return html;
 }
 
-http.createServer(async (request, response) => {
+createServer(async (request, response) => {
     if (request.method === 'GET') {
         try {
             let users = await get(userUrl);
