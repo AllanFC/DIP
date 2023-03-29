@@ -1,0 +1,22 @@
+body
+    p users: 
+    table(border = "1")
+        thead 
+            tr
+                td
+                td <b>First name</b>
+                td <b>Last name</b>
+                td <b>Email</b>
+                td <b>Username</b>
+                td <b>Password</b>
+        -
+        each user in users
+            tr
+                td
+                    img(src=user.picture.thumbnail, alt="")
+                td #{user.name.first}
+                td #{user.name.last}
+                td #{user.email}
+                td #{user.login.username}
+                td #{user.login.password}
+                

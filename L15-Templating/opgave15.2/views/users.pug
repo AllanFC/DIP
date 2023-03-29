@@ -1,0 +1,9 @@
+body
+    p users: 
+    table(border = "1")
+        -
+        each user in users
+            tr
+                td #{user.name}
+                td #{user.username}
+                td #{user.email}
