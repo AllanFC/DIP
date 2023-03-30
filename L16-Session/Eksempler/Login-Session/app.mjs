@@ -25,7 +25,7 @@ app.use(express.json());
 
 app.post('/login', (request, response) => {
     const { navn, password } = request.body;
-    if (password === '111' && navn) {
+    if (password === 'test1234' && navn) {
         request.session.navn = navn;
         response.status(201).send(['login ok!']);
     } else {

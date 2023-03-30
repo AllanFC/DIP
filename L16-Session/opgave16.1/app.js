@@ -20,29 +20,49 @@ let products = [{id: "1", name: "Marabou", price: 29},
                 {id: "5", name: "Shredded chedder", price: 17},
                 {id: "6", name: "Shredded mozaralla", price: 17}]
 
+app.post('/login', (request, response) => {
+    const { name, password } = request.body;
+    if (password === 'test1234' && name) {
+        request.session.name = name;
+        response.status(201).send(['login ok!']);
+    } else {
+        response.sendStatus(401);
+    }
+});
+
 app.post('/add', (request, response) => {
-    const { id } = request.body;
-    let cart = request.session.cart
-    if (cart == undefined) {
-        cart = {cart: [], products: products}
-    }
-    for(let product of cart.products) {
-        if(product.id == id){
-            console.log(product.name);
-            cart.cart.push(product)
+    let name = request.session.name;
+    if(name !== undefined){
+        const { id } = request.body;
+        let cart = request.session.cart
+        if (cart == undefined) {
+            cart = {name: name, cart: [], products: products}
         }
+        for(let product of cart.products) {
+            if(product.id == id){
+                cart.cart.push(product)
+            }
+        }
+        request.session.cart=cart
+        response.status(201).send(['added']);
+    } else {
+        response.redirect("/index.html");
     }
-    request.session.cart=cart
-    response.status(201).send(['added']);
 });
 
-app.get('/', (request, response) => {
-    let cart = request.session.cart
-    if (cart == undefined) {
-        cart = {cart: [], products: products}
+app.get('/shop', (request, response) => {
+    let name = request.session.name;
+    if(name !== undefined){
+        let cart = request.session.cart;
+        if (cart == undefined) {
+            cart = {name: name, cart: [], products: products}
+        }
+        products.cart = cart;
+        response.render('index', cart);
+    } else{
+        response.redirect("/index.html");
     }
-    products.cart = cart;
-    response.render('index', cart);
+    
 });
 
-app.listen(8181);
+app.listen(8181, () => {console.log("Running...");});

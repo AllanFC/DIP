@@ -15,13 +15,14 @@ script.
     let clickfunction = async (id) => {
             try {
                 await post("http://localhost:8181/add", { id:id });
-                window.location.href = "http://localhost:8181";
+                window.location.href = "http://localhost:8181/shop";
             } catch (e) {
                 console.log("Error: " + e.message);
             }
         }
 
 body
+    h1 Welcome #{name}
     p Products 
     
     table
